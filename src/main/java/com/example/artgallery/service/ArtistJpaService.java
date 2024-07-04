@@ -91,9 +91,9 @@ public class ArtistJpaService implements ArtistRepository {
     }
 
     // API12 - Please Check
-    @Override 
-    public Artist getArtistArts(int artistId){
-        try{
+    @Override
+    public List<Art> getArtistArts(int artistId) {
+        try {
             Artist artist = AJR.findById(artistId).get();
             return ArtJR.findByArtist(artist);
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class ArtistJpaService implements ArtistRepository {
     }
 
     @Override
-    public Artist getArtistGalleries(int artistId) {
+    public List<Gallery> getArtistGalleries(int artistId) {
         try {
             Artist artist = AJR.findById(artistId).get();
             return artist.getGalleries();

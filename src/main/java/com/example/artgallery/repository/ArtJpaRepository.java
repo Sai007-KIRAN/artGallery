@@ -8,5 +8,5 @@ import java.util.*;
 
 @Repository
 public interface ArtJpaRepository extends JpaRepository<Art, Integer> {
-    List<Art> findByArtist(Artist artist); //API-12
+    List<Art> findByArtist(Artist artist); // API-12
 }

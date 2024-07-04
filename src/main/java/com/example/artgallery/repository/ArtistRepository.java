@@ -16,7 +16,7 @@ public interface ArtistRepository {
 
     void deleteArtist(int artistId);
 
-    Artist getArtistArts(int artistId); //API-12
+    List<Art> getArtistArts(int artistId); // API-12
 
-    Artist getArtistGalleries(int artistId);
+    List<Gallery> getArtistGalleries(int artistId);
 }

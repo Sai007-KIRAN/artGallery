@@ -7,5 +7,4 @@ import com.example.artgallery.model.*;
 
 @Repository
 public interface GalleryJpaRepository extends JpaRepository<Gallery, Integer> {
-
 }
