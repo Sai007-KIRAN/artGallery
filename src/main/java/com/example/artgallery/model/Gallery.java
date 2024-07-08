@@ -18,7 +18,7 @@ public class Gallery {
     @Column(name = "location")
     private String location;
 
-    @@ManyToMany(mappedBy = "galleries")
+    @ManyToMany(mappedBy = "galleries")
     @JsonIgnoreProperties("galleries")
     private List<Artist> artists;
 
