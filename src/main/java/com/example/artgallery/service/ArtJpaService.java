@@ -62,10 +62,10 @@ public class ArtJpaService implements ArtRepository {
                 Artist artist = art.getArtist();
                 int pId = artist.getArtistId();
                 Artist complete = AJR.findById(pId).get();
-                art.setArtist(complete);
+                update.setArtist(complete);
             }
-            ArtJR.save(art);
-            return art;
+            ArtJR.save(update);
+            return update;
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
@@ -75,6 +75,7 @@ public class ArtJpaService implements ArtRepository {
     public void deleteArtId(int artId) {
         try {
             ArtJR.deleteById(artId);
+            ArtJR.findAll();
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
@@ -82,8 +83,8 @@ public class ArtJpaService implements ArtRepository {
     }
 
     @Override
-    public Art getArt(int artId){
-        try{
+    public Artist getArt(int artId) {
+        try {
             Art view = ArtJR.findById(artId).get();
             return view.getArtist();
         } catch (Exception e) {
