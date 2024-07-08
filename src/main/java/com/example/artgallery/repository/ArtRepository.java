@@ -15,7 +15,7 @@ public interface ArtRepository {
 
     Art updateArt(int artId, Art art);
 
-    Art deleteArtId(int artId);
+    void deleteArtId(int artId);
 
     Art getArt(int artId);
 
