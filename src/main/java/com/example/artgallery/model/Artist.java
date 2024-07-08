@@ -18,7 +18,12 @@ public class Artist {
     @Column(name = "genre")
     private String genre;
 
-    @ManyToMany(mappedBy = "artists")
+    @ManyToMany
+    @JoinTable(
+            name = "artist_gallery",
+            joinColumns = @JoinColumn(name = "artistid"),
+            inverseJoinColumns = @JoinColumn(name = "galleryid")
+    )
     @JsonIgnoreProperties("artists")
     private List<Gallery> galleries;
 
