@@ -38,7 +38,7 @@ public class ArtController{
     }
 
     @GetMapping("/arts/{artId}/artist")
-    public Art getArt(@PathVariable("artId") int artId){
+    public Artist getArt(@PathVariable("artId") int artId){
         return AJS.getArt(artId);
     }
 }
